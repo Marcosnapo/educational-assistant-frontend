@@ -1,0 +1,382 @@
+/* src/App.css
+Estilos para el Asistente de Contenido Educativo con IA para Padres.
+*/
+
+/* Importar fuentes para accesibilidad */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+/* Open Dyslexic (si no está en Google Fonts, se necesita una importación específica o fallback) */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.high-contrast {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.app-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.high-contrast .app-container {
+  background-color: #333333 !important;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2) !important;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  transition: color 0.3s ease;
+}
+
+body.high-contrast h1 {
+  color: #FFFF00 !important;
+}
+
+/* Estilos para los controles de accesibilidad */
+.accessibility-controls {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+body.high-contrast .accessibility-controls {
+  background-color: #555555 !important;
+}
+
+.accessibility-controls h3 {
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+body.high-contrast .accessibility-controls h3 {
+  color: #FFFFFF !important;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.control-group label {
+  flex-basis: 150px;
+  color: #34495e;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+body.high-contrast .control-group label {
+  color: #FFFFFF !important;
+}
+
+.control-group input[type="range"] {
+  flex-grow: 1;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+  border-radius: 5px;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+}
+
+body.high-contrast .control-group input[type="range"]::-webkit-slider-thumb {
+  background: #FFFF00 !important;
+}
+body.high-contrast .control-group input[type="range"]::-moz-range-thumb {
+  background: #FFFF00 !important;
+}
+
+
+.control-group span {
+  margin-left: 10px;
+  color: #34495e;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+body.high-contrast .control-group span {
+  color: #FFFFFF !important;
+}
+
+.control-group select {
+  flex-grow: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  background-color: #ffffff;
+  color: #34495e;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.high-contrast .control-group select {
+  background-color: #444444 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFF00 !important;
+}
+
+.control-group input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Sección de entrada */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+textarea {
+  width: calc(100% - 24px);
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1.1em;
+  resize: vertical;
+  min-height: 180px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #34495e;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.high-contrast textarea {
+  background-color: #222222 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFF00 !important;
+}
+
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  gap: 15px; /* Espacio entre los botones */
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-grow: 1; /* Permite que los botones crezcan para llenar el espacio */
+  min-width: 200px; /* Ancho mínimo para cada botón */
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+body.high-contrast button {
+  background-color: #008000 !important;
+  color: #FFFFFF !important;
+}
+body.high-contrast button:hover:not(:disabled) {
+  background-color: #006400 !important;
+}
+
+.message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.high-contrast .message {
+  color: #FFFF00 !important;
+  background-color: #8B0000 !important;
+  border-color: #FF0000 !important;
+}
+
+/* Sección de contenido generado */
+.generated-content-section {
+  margin-top: 30px;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+body.high-contrast .generated-content-section {
+  background-color: #444444 !important;
+}
+
+/* Contenedor para los dos idiomas (resumen o puntos clave) */
+.summary-output-container,
+.key-points-output-container { /* Añadimos el nuevo contenedor aquí */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.summary-column,
+.key-points-column { /* Estilos para ambas columnas */
+  flex: 1;
+  min-width: 300px;
+  background-color: #fdfdfd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.high-contrast .summary-column,
+body.high-contrast .key-points-column {
+  background-color: #222222 !important;
+  color: #FFFFFF !important;
+}
+
+.summary-column h3,
+.key-points-column h3 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  transition: color 0.3s ease;
+}
+
+body.high-contrast .summary-column h3,
+body.high-contrast .key-points-column h3 {
+  color: #FFFF00 !important;
+}
+
+.summary-column p,
+.key-points-column ul { /* Estilos para párrafos y listas de puntos clave */
+  color: #34495e;
+  font-size: 1.05em;
+  white-space: pre-wrap;
+  transition: color 0.3s ease;
+}
+
+body.high-contrast .summary-column p,
+body.high-contrast .key-points-column ul {
+  color: #DDDDDD !important;
+}
+
+.key-points-column ul {
+  list-style: disc; /* Puntos de lista */
+  padding-left: 20px; /* Indentación para la lista */
+}
+
+.key-points-column li {
+  margin-bottom: 8px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .button-group {
+    flex-direction: column; /* Apila los botones en pantallas pequeñas */
+  }
+
+  button {
+    min-width: unset; /* Elimina el ancho mínimo para que se adapte completamente */
+  }
+
+  .accessibility-controls .control-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .control-group label {
+    flex-basis: auto;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .summary-output-container,
+  .key-points-output-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .summary-column,
+  .key-points-column {
+    min-width: unset;
+  }
+}
