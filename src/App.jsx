@@ -10,10 +10,8 @@ function App() {
   const [prompt, setPrompt] = useState('');
   const [summaryEs, setSummaryEs] = useState(null);
   const [summaryEn, setSummaryEn] = useState(null);
-  // Nuevos estados para los puntos clave
   const [keyPointsEs, setKeyPointsEs] = useState([]);
   const [keyPointsEn, setKeyPointsEn] = useState([]);
-  // Estado para controlar qué tipo de resultado se muestra
   const [resultType, setResultType] = useState(null); // 'summary' o 'key_points'
 
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +21,11 @@ function App() {
   const [fontFamily, setFontFamily] = useState('Inter');
   const [highContrast, setHighContrast] = useState(false);
 
-  const BACKEND_URL = "http://localhost:8000";
+  // URL de tu backend FastAPI (¡CRUCIAL!)
+  // Usa import.meta.env para acceder a las variables de entorno de Vite
+  // En desarrollo, usará http://localhost:8000 si no se define VITE_APP_BACKEND_URL
+  // En producción (Render), usará la variable de entorno VITE_APP_BACKEND_URL configurada en Render
+  const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL || "http://localhost:8000";
 
   useEffect(() => {
     document.body.style.fontSize = `${fontSize}px`;
@@ -51,7 +53,6 @@ function App() {
     setHighContrast(!highContrast);
   };
 
-  // Función para limpiar resultados y establecer el tipo de resultado
   const resetResults = (type) => {
     setMessage('');
     setSummaryEs(null);
@@ -62,7 +63,7 @@ function App() {
   };
 
   const handleSummarize = async () => {
-    resetResults('summary'); // Limpia y establece el tipo de resultado
+    resetResults('summary');
     setIsLoading(true);
 
     if (!prompt.trim()) {
@@ -106,9 +107,8 @@ function App() {
     }
   };
 
-  // Nueva función para obtener puntos clave
   const handleGetKeyPoints = async () => {
-    resetResults('key_points'); // Limpia y establece el tipo de resultado
+    resetResults('key_points');
     setIsLoading(true);
 
     if (!prompt.trim()) {
@@ -199,7 +199,7 @@ function App() {
           onChange={handlePromptChange}
           rows="10"
         />
-        <div className="button-group"> {/* Nuevo contenedor para los botones */}
+        <div className="button-group">
           <button onClick={handleSummarize} disabled={isLoading}>
             {isLoading && resultType === 'summary' ? 'Generando Resumen...' : 'Generar Resumen Bilingüe'}
           </button>
@@ -214,7 +214,6 @@ function App() {
       <div className="generated-content-section">
         {isLoading && <p>Cargando contenido...</p>}
 
-        {/* Renderizado condicional basado en resultType */}
         {resultType === 'summary' && summaryEs && summaryEn && !isLoading && (
           <div className="summary-output-container">
             <div className="summary-column">
@@ -229,7 +228,7 @@ function App() {
         )}
 
         {resultType === 'key_points' && keyPointsEs.length > 0 && keyPointsEn.length > 0 && !isLoading && (
-          <div className="key-points-output-container"> {/* Nuevo contenedor para puntos clave */}
+          <div className="key-points-output-container">
             <div className="key-points-column">
               <h3>Puntos Clave en Español:</h3>
               <ul>
