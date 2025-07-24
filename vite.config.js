@@ -14,6 +14,7 @@ export default defineConfig({
     host: '0.0.0.0', // Permite que el servidor de previsualización escuche en todas las interfaces
     port: process.env.PORT || 4173, // Usa la variable de entorno PORT de Render, o 4173 por defecto
     // ¡CRUCIAL! Permite que Render acceda a tu aplicación
-    allowedHosts: ['https://educational-assistant-frontend.onrender.com'],
+    // Asegúrate de que la URL REAL de tu frontend en Render sea la correcta aquí, SOLO el hostname:
+    allowedHosts: ['educational-assistant-frontend.onrender.com'],
   }
 })
