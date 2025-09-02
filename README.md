@@ -37,7 +37,6 @@ Modelo de Lenguaje Avanzado: Para la generación de resúmenes y la identificaci
 
 Demo en Vivo: https://educational-assistant-frontend.onrender.com/
 
-Video de Demostración: [Aquí puedes poner un enlace a un video de YouTube o Loom que muestre el proyecto en acción.]
 
 🔧 Instalación y Uso
 Prerrequisitos:
