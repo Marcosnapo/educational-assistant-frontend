@@ -1,8 +1,11 @@
 🤖 Asistente Educacional Bilingüe con IA
+
 Descripción del Proyecto
+
 ✨ Imagina tener un tutor personal inteligente, capaz de resumir los conceptos clave de cualquier tema y explicártelos en dos idiomas. ¡Esa es la potencia de nuestro Asistente Educacional Bilingüe! Este proyecto innovador fusiona la Inteligencia Artificial con la necesidad de un aprendizaje global y accesible.
 
 🚀 Características Principales
+
 Resúmenes Inteligentes en Dos Idiomas: 📝 Obtén las ideas principales de cualquier texto o tema, instantáneamente, en el idioma que prefieras. ¡Rompe las barreras del lenguaje en el aprendizaje!
 
 Identificación de Puntos Clave Bilingüe: 📌 ¿Necesitas ir al grano? Nuestra IA analiza el contenido y extrae los puntos esenciales, presentándolos claramente en dos idiomas.
@@ -12,6 +15,7 @@ Interfaz de Usuario Intuitiva y Moderna: 💻 Desarrollada con React y Vite, la 
 Potenciado por IA de Última Generación: 🧠 Utilizamos modelos avanzados de Inteligencia Artificial para garantizar resúmenes precisos y relevantes.
 
 ⚙️ Tecnologías Utilizadas
+
 Para crear esta experiencia educativa única, hemos confiado en tecnologías punteras que aseguran rendimiento y escalabilidad.
 
 Front-end:
